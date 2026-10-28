@@ -13,6 +13,18 @@ Short, dated entries. Newest first. Write one after every session, even a bad on
 
 ---
 
+## 2026-10-28 — Tooling notes (#5)
+
+**Worked on:** `00-tooling/`: setup, shell basics, search, permissions, Rust debugging,
+and strace, each with output captured from this lab.
+**Learned:** strace showed file-inspector's whole story in syscalls: `statx` with
+`AT_SYMLINK_NOFOLLOW` (= `symlink_metadata`), then `openat` returning `EACCES` (= os error
+13). The `stat` succeeded and only the `open` failed: metadata permission comes from the
+directory, content permission from the file. The 64 KiB chunked reads are visible too.
+**Stuck on:** no sudo in the automated session, so strace came from `apt-get download` +
+`dpkg -x` into `~/.cache/tools`. Still need `sudo apt install gdb strace valgrind`.
+**Next:** Phase 2: processes, file descriptors, and `/proc`.
+
 ## 2026-10-28 — file-inspector CLI (#3)
 
 **Worked on:** `cli-tools/file-inspector`: recursive walk with an explicit stack, chunked

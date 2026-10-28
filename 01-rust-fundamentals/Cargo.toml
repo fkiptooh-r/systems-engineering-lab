@@ -1,0 +1,6 @@
+# Phase 1 workspace: every exercise and project in this folder shares one
+# Cargo.lock and one target/ directory, and is checked by one command.
+# `cargo new <dir>` run inside this folder adds the new crate to `members`.
+[workspace]
+resolver = "3"
+members = ["ownership/move-vs-copy"]

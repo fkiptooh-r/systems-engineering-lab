@@ -13,6 +13,18 @@ Short, dated entries. Newest first. Write one after every session, even a bad on
 
 ---
 
+## 2026-10-28 — Error handling (#2)
+
+**Worked on:** `error-handling/sum-numbers`: the same program written with `unwrap`,
+`Box<dyn Error>`, then a custom `SumError` enum; unit tests plus integration tests that
+run the real binary and check exit codes.
+**Learned:** `?` is `return Err(From::from(e))`. `From` suits conversions that need no
+context; `map_err` attaches context such as the line number. `checked_add` turns silent
+overflow into an error.
+**Stuck on:** whether empty input should be `0` or an error. Chose an error: "no data" and
+"sums to zero" are different facts.
+**Next:** #3, the file-inspector CLI.
+
 ## 2026-10-28 — Ownership and borrowing (#1)
 
 **Worked on:** four exercises in `01-rust-fundamentals/` (move-vs-copy, string-vs-str,

@@ -13,6 +13,17 @@ Short, dated entries. Newest first. Write one after every session, even a bad on
 
 ---
 
+## 2026-10-28 — file-inspector CLI (#3)
+
+**Worked on:** `cli-tools/file-inspector`: recursive walk with an explicit stack, chunked
+SHA-256, `--duplicates`, and a `Report` that collects errors instead of stopping.
+**Learned:** measured instead of assumed: 2.8 MB peak memory while hashing a 1 GiB file.
+`symlink_metadata` (lstat) vs `metadata` (stat) is the difference between safe and an
+infinite loop. Root ignores `chmod 000`, so permission tests must detect it.
+**Stuck on:** hashing is 2× slower than `sha256sum` (no SHA-NI on this CPU; coreutils uses
+optimised assembly). Parked for Phase 6 profiling.
+**Next:** #5 tooling notes, starting with `strace` on the `chmod 000` case.
+
 ## 2026-10-28 — Error handling (#2)
 
 **Worked on:** `error-handling/sum-numbers`: the same program written with `unwrap`,

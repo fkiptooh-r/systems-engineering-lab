@@ -3,4 +3,4 @@
 # `cargo new <dir>` run inside this folder adds the new crate to `members`.
 [workspace]
 resolver = "3"
-members = ["ownership/move-vs-copy"]
+members = ["borrowing/borrow-rules", "borrowing/returning-references","ownership/move-vs-copy", "ownership/string-vs-str"]

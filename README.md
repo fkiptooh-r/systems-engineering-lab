@@ -48,3 +48,7 @@ Each substantial project documents:
 ## Progress
 
 This repository is a living engineering notebook. Projects will be added as prerequisites are understood and implementations are tested.
+
+## License
+
+Released under the [MIT License](LICENSE).
